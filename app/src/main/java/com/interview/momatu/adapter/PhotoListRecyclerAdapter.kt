@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -16,11 +17,13 @@ class PhotoListRecyclerAdapter(val photolist: ArrayList<Photo>) :
 
     class PhotoListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        private var txt_author: TextView;
         private var imageview: ImageView?
 
         init {
 
             imageview = itemView.findViewById(R.id.photo_imageview);
+            txt_author = itemView.findViewById(R.id.txt_authorname);
 
         }
 
@@ -33,6 +36,8 @@ class PhotoListRecyclerAdapter(val photolist: ArrayList<Photo>) :
                 .placeholder(R.drawable.defaultimage)
                 .signature(ObjectKey(photo.downloadURL))
                 .into(imageview!!)
+
+            txt_author.text = photo.author;
         }
 
     }

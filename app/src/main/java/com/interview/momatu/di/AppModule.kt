@@ -3,15 +3,16 @@ package com.interview.momatu.di
 import android.content.Context
 import com.interview.momatu.model.DefaultPhotoRepository
 import com.interview.momatu.model.PhotoRepository
+import com.interview.momatu.network.DefaultRemoteDataSource
+import com.interview.momatu.network.PhotoService
+import com.interview.momatu.network.RemoteDataSource
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
-import kkt.sai.composetodoapp.model.network.DefaultRemoteDataSource
-import kkt.sai.composetodoapp.model.network.PhotoService
-import kkt.sai.composetodoapp.model.network.RemoteDataSource
+
 
 import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
